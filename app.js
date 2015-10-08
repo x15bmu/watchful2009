@@ -28,6 +28,10 @@ app.use('/', routes);
 app.use('/users', users);
 
 // really bad way to do this because it's past 5AM
+app.get('/reset', function(req, res) {
+	lastState = -1;
+	res.send();
+});
 app.get('/0', function(req, res) {
 	lastState = 0;
 	res.send();
