@@ -30,7 +30,7 @@ app.use('/users', users);
 // really bad way to do this because it's past 5AM
 app.get('/reset', function(req, res) {
 	lastState = -1;
-	res.send();
+	res.redirect('/');
 });
 app.get('/0', function(req, res) {
 	lastState = 0;
@@ -46,7 +46,7 @@ app.get('/2', function(req, res) {
 });
 
 app.get('/text', function(req, res) {
-	var textArray = ["Don't forget to take your medicine!", "Ben is approaching the beacon", "Ben is leaving the building"];
+	var textArray = ["Don't forget to take your medicine!", "Melody is approaching the beacon", "Melody is leaving the building"];
 	if (lastState == -1) {
 		res.send('Waiting for message...');
 	} else {
